@@ -14,8 +14,10 @@ jobs:
       credentials:
         username: zhang699
         password: ${{ secrets.DOCKER_HUB_TOKEN}}
-      env:
-        TARGET_ZECZEC_PROJECT: "https://www.zeczec.com/projects/plantpractice2021"
-        SECRET_TOKEN: ${{secrets.SECRET_TOKEN}}
     steps:
       - uses: actions/checkout@v2
+      - name: "Run"
+        run: "node /app/src/index.js"
+        env:
+          TARGET_ZECZEC_PROJECT: "https://www.zeczec.com/projects/plantpractice2021"
+          SECRET_TOKEN: ${{secrets.SECRET_TOKEN}}
