@@ -1,4 +1,4 @@
-name: zeczec manual crawler
+name: zeczec  crawler
 
 on:
   schedule:
