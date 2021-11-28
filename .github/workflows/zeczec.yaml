@@ -1,0 +1,20 @@
+name: zeczec manual crawler
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "the reason that you want to re-run"
+        required: false
+jobs:
+  crawl:
+    container:
+      image: zhang699/zeczec:latest
+      credentials:
+        username: zhang699
+        password: ${{ secrets.DOCKER_HUB_TOKEN}}
+      id: "crawler"
+      env:
+        TARGET_ZECZEC_PROJECT: "https://www.zeczec.com/projects/plantpractice2021"
+        SECRET_TOKEN: ${{secrets.SECRET_TOKEN}}
+
