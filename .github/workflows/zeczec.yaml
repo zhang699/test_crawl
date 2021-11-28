@@ -8,6 +8,7 @@ on:
         required: false
 jobs:
   crawl:
+    runs-on: 'ubuntu-latest'
     container:
       image: zhang699/zeczec:latest
       credentials:
@@ -17,4 +18,4 @@ jobs:
         TARGET_ZECZEC_PROJECT: "https://www.zeczec.com/projects/plantpractice2021"
         SECRET_TOKEN: ${{secrets.SECRET_TOKEN}}
     steps:
-      - uses: actions/checkout@v1.0.0
+      - uses: actions/checkout@v2
