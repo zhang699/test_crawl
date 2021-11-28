@@ -1,0 +1,21 @@
+name: zeczec manual crawler
+
+on:
+  schedule:
+    # run at every hour at 40 mins
+    - cron:  '40 * * * *'
+jobs:
+  crawl:
+    runs-on: 'ubuntu-latest'
+    container:
+      image: zhang699/zeczec:latest
+      credentials:
+        username: zhang699
+        password: ${{ secrets.DOCKER_HUB_TOKEN}}
+    steps:
+      - uses: actions/checkout@v2
+      - name: "Run"
+        run: "node /app/src/index.js"
+        env:
+          TARGET_ZECZEC_PROJECT: "https://www.zeczec.com/projects/plantpractice2021"
+          SECRET_TOKEN: ${{secrets.SECRET_TOKEN}}
