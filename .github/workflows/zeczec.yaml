@@ -13,7 +13,6 @@ jobs:
       credentials:
         username: zhang699
         password: ${{ secrets.DOCKER_HUB_TOKEN}}
-      id: "crawler"
       env:
         TARGET_ZECZEC_PROJECT: "https://www.zeczec.com/projects/plantpractice2021"
         SECRET_TOKEN: ${{secrets.SECRET_TOKEN}}
