@@ -3,7 +3,7 @@ name: zeczec  crawler
 on:
   schedule:
     # run at every hour at 40 mins
-    - cron:  '40 * * * *'
+    - cron:  '*/10 * * * *'
 jobs:
   crawl:
     runs-on: 'ubuntu-latest'
